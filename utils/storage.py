@@ -3,12 +3,13 @@ import os
 import time
 
 # Make sure the data folder exists (otherwise saving will break)
-def ensure_data_folder(folder_name="data"):
+def ensure_data_folder(folder_name="data/user_data"):
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
 
 # Save a bingo board as a JSON file
-def save_board_json(board, folder_name="data"):
+def save_board_json(board, folder_name="data/user_data"):
+    ensure_data_folder(folder_name)
     # Make sure the folder exists
     ensure_data_folder(folder_name)
 

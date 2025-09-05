@@ -208,3 +208,6 @@ __marimo__/
 
 #Idea -- PyCharm project settings
 .idea/
+
+#User saved Bingo boards
+data/user_data/

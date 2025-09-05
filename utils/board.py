@@ -36,8 +36,7 @@ def generate_board(size=5, prompts=None):
     board = {
         "board_id": str(int(time.time())) + "_" + str(size) + "x" + str(size),
         "size": size,
-        "tiles": tiles,
-        "version": 1
+        "tiles": tiles
     }
 
     return board
