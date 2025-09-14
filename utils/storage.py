@@ -3,14 +3,12 @@ import os
 import time
 
 # Make sure the data folder exists (otherwise saving will break)
-def ensure_data_folder(folder_name="data/user_data"):
+def ensure_data_folder(folder_name="data/user_boards"):
     if not os.path.exists(folder_name):
         os.makedirs(folder_name)
 
 # Save a bingo board as a JSON file
-def save_board_json(board, folder_name="data/user_data"):
-    ensure_data_folder(folder_name)
-    # Make sure the folder exists
+def save_board(board, folder_name="data/user_boards"):
     ensure_data_folder(folder_name)
 
     # Create a unique filename using the current time
@@ -22,11 +20,10 @@ def save_board_json(board, folder_name="data/user_data"):
     with open(file_path, "w", encoding="utf-8") as file:
         json.dump(board, file, indent=2, ensure_ascii=False)
 
-    # Return the path of the saved file
     return file_path
 
 # Load a bingo board from an uploaded JSON file
-def load_board_json(uploaded_file):
+def load_board(uploaded_file):
     # uploaded_file behaves like a file-like object, so we can read it directly
     board_data = json.load(uploaded_file)
 
